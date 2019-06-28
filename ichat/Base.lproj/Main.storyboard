@@ -169,16 +169,66 @@
                                     <constraint firstItem="gWy-Jd-Z6w" firstAttribute="centerY" secondItem="NcT-4L-WLW" secondAttribute="centerY" id="pIT-QD-lBG"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KdV-cP-I6g">
-                                <rect key="frame" x="67" y="116" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="KdV-cP-I6g">
+                                <rect key="frame" x="137.5" y="103" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="dba-dA-ZgA"/>
+                                    <constraint firstAttribute="height" constant="100" id="uZv-2u-kBL"/>
+                                </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rIX-db-eCG">
+                                <rect key="frame" x="16" y="213" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIi-6x-UDh">
+                                <rect key="frame" x="16" y="253" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Lu-dr-HO2">
+                                <rect key="frame" x="16" y="293" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDC-1d-yx5">
+                                <rect key="frame" x="16" y="333" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ieb-zH-h11">
+                                <rect key="frame" x="16" y="373" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DIi-6x-UDh" firstAttribute="leading" secondItem="oNK-VF-gKU" secondAttribute="leading" constant="16" id="03i-LT-x8G"/>
+                            <constraint firstItem="Ieb-zH-h11" firstAttribute="top" secondItem="JDC-1d-yx5" secondAttribute="bottom" constant="10" id="0Tz-NG-gt5"/>
+                            <constraint firstItem="KdV-cP-I6g" firstAttribute="centerX" secondItem="oNK-VF-gKU" secondAttribute="centerX" id="0VZ-XB-Gtc"/>
+                            <constraint firstItem="oNK-VF-gKU" firstAttribute="trailing" secondItem="DIi-6x-UDh" secondAttribute="trailing" constant="16" id="1p6-Am-LV9"/>
+                            <constraint firstItem="oNK-VF-gKU" firstAttribute="trailing" secondItem="0Lu-dr-HO2" secondAttribute="trailing" constant="16" id="KGc-B2-aaV"/>
                             <constraint firstItem="NcT-4L-WLW" firstAttribute="leading" secondItem="oNK-VF-gKU" secondAttribute="leading" id="LeA-6A-w2g"/>
+                            <constraint firstItem="Ieb-zH-h11" firstAttribute="leading" secondItem="oNK-VF-gKU" secondAttribute="leading" constant="16" id="QPx-au-hPU"/>
                             <constraint firstItem="NcT-4L-WLW" firstAttribute="top" secondItem="oNK-VF-gKU" secondAttribute="top" id="Sis-6Z-bGw"/>
+                            <constraint firstItem="oNK-VF-gKU" firstAttribute="trailing" secondItem="JDC-1d-yx5" secondAttribute="trailing" constant="16" id="U1J-sv-Y0M"/>
+                            <constraint firstItem="rIX-db-eCG" firstAttribute="leading" secondItem="oNK-VF-gKU" secondAttribute="leading" constant="16" id="XcJ-ma-AIj"/>
                             <constraint firstItem="NcT-4L-WLW" firstAttribute="trailing" secondItem="oNK-VF-gKU" secondAttribute="trailing" id="Xes-4y-1ya"/>
+                            <constraint firstItem="oNK-VF-gKU" firstAttribute="trailing" secondItem="Ieb-zH-h11" secondAttribute="trailing" constant="16" id="YGa-g9-chk"/>
+                            <constraint firstItem="JDC-1d-yx5" firstAttribute="top" secondItem="0Lu-dr-HO2" secondAttribute="bottom" constant="10" id="ZHX-lb-1NX"/>
+                            <constraint firstItem="0Lu-dr-HO2" firstAttribute="leading" secondItem="oNK-VF-gKU" secondAttribute="leading" constant="16" id="apB-zV-G1w"/>
+                            <constraint firstItem="rIX-db-eCG" firstAttribute="top" secondItem="KdV-cP-I6g" secondAttribute="bottom" constant="10" id="eI4-hD-fap"/>
+                            <constraint firstItem="JDC-1d-yx5" firstAttribute="leading" secondItem="oNK-VF-gKU" secondAttribute="leading" constant="16" id="iMS-AS-t7u"/>
+                            <constraint firstItem="0Lu-dr-HO2" firstAttribute="top" secondItem="DIi-6x-UDh" secondAttribute="bottom" constant="10" id="suP-Lt-ETl"/>
+                            <constraint firstItem="oNK-VF-gKU" firstAttribute="trailing" secondItem="rIX-db-eCG" secondAttribute="trailing" constant="16" id="uoe-OK-hbg"/>
+                            <constraint firstItem="KdV-cP-I6g" firstAttribute="top" secondItem="NcT-4L-WLW" secondAttribute="bottom" constant="8" id="v46-73-Nes"/>
+                            <constraint firstItem="DIi-6x-UDh" firstAttribute="top" secondItem="rIX-db-eCG" secondAttribute="bottom" constant="10" id="vQV-Qj-r8V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oNK-VF-gKU"/>
                     </view>
@@ -188,4 +238,7 @@
             <point key="canvasLocation" x="836" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avatarPlaceholder" width="101" height="101"/>
+    </resources>
 </document>
