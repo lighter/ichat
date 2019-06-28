@@ -100,6 +100,7 @@
                         <outlet property="emailTextField" destination="XIc-iW-aJc" id="u4j-Wc-bpq"/>
                         <outlet property="passwordTextField" destination="UXf-80-70i" id="7a5-zo-99Z"/>
                         <outlet property="repeatPassworTextField" destination="VxX-QA-BCv" id="6nr-JR-cLK"/>
+                        <segue destination="YsZ-Ax-6j4" kind="presentation" identifier="welcomeToFinishReg" id="XZZ-mg-CkM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="132" y="137.18140929535232"/>
         </scene>
-        <!--View Controller-->
+        <!--Finish Registration View Controller-->
         <scene sceneID="b0V-QW-Gbz">
             <objects>
-                <viewController id="YsZ-Ax-6j4" sceneMemberID="viewController">
+                <viewController id="YsZ-Ax-6j4" customClass="FinishRegistrationViewController" customModule="ichat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iw0-Dk-ZTZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,6 +137,9 @@
                                             <constraint firstAttribute="height" constant="30" id="gSq-v3-pwh"/>
                                         </constraints>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelBtnPress:" destination="YsZ-Ax-6j4" eventType="touchUpInside" id="Rwn-Oo-zhR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojV-Jv-apZ">
                                         <rect key="frame" x="326" y="22.5" width="38" height="30"/>
@@ -145,6 +149,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="doneBtnPress:" destination="YsZ-Ax-6j4" eventType="touchUpInside" id="rw6-cZ-E42"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNN-gE-Khf">
                                         <rect key="frame" x="8" y="25" width="359" height="25.5"/>
@@ -232,6 +239,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oNK-VF-gKU"/>
                     </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="KdV-cP-I6g" id="LZ4-ys-PvV"/>
+                        <outlet property="cityTextField" destination="JDC-1d-yx5" id="JKV-cF-8p0"/>
+                        <outlet property="countryTextField" destination="0Lu-dr-HO2" id="odt-Rx-InQ"/>
+                        <outlet property="nameTextField" destination="rIX-db-eCG" id="HDz-7h-cgy"/>
+                        <outlet property="phoneTextField" destination="Ieb-zH-h11" id="fwm-HZ-vHu"/>
+                        <outlet property="surnameTextField" destination="DIi-6x-UDh" id="Z8f-3O-0Z9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUS-SI-gsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

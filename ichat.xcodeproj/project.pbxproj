@@ -16,6 +16,8 @@
 		EC6977BC22C270450061CA05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC6977BB22C270450061CA05 /* GoogleService-Info.plist */; };
 		EC6977BE22C644EC0061CA05 /* FUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6977BD22C644EB0061CA05 /* FUser.swift */; };
 		EC6977C022C646C80061CA05 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6977BF22C646C80061CA05 /* Constants.swift */; };
+		EC6977C222C663FC0061CA05 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6977C122C663FC0061CA05 /* FinishRegistrationViewController.swift */; };
+		EC6977C522C6648F0061CA05 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6977C422C6648F0061CA05 /* HelperFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		EC6977BB22C270450061CA05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC6977BD22C644EB0061CA05 /* FUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUser.swift; sourceTree = "<group>"; };
 		EC6977BF22C646C80061CA05 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EC6977C122C663FC0061CA05 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
+		EC6977C422C6648F0061CA05 /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,17 +88,35 @@
 		EC06789322ACB9600099118F /* ichat */ = {
 			isa = PBXGroup;
 			children = (
-				EC6977BF22C646C80061CA05 /* Constants.swift */,
-				EC6977BD22C644EB0061CA05 /* FUser.swift */,
+				EC6977C322C6647E0061CA05 /* Helpers */,
+				EC6977C622C664CB0061CA05 /* Classes */,
 				EC6977BB22C270450061CA05 /* GoogleService-Info.plist */,
 				EC06789422ACB9600099118F /* AppDelegate.swift */,
 				EC06789622ACB9600099118F /* ViewController.swift */,
 				EC06789822ACB9600099118F /* Main.storyboard */,
+				EC6977C122C663FC0061CA05 /* FinishRegistrationViewController.swift */,
 				EC06789B22ACB9620099118F /* Assets.xcassets */,
 				EC06789D22ACB9620099118F /* LaunchScreen.storyboard */,
 				EC0678A022ACB9620099118F /* Info.plist */,
 			);
 			path = ichat;
+			sourceTree = "<group>";
+		};
+		EC6977C322C6647E0061CA05 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EC6977C422C6648F0061CA05 /* HelperFunctions.swift */,
+				EC6977BF22C646C80061CA05 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EC6977C622C664CB0061CA05 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EC6977BD22C644EB0061CA05 /* FUser.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,10 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6977C222C663FC0061CA05 /* FinishRegistrationViewController.swift in Sources */,
 				EC6977BE22C644EC0061CA05 /* FUser.swift in Sources */,
 				EC06789722ACB9600099118F /* ViewController.swift in Sources */,
 				EC06789522ACB9600099118F /* AppDelegate.swift in Sources */,
 				EC6977C022C646C80061CA05 /* Constants.swift in Sources */,
+				EC6977C522C6648F0061CA05 /* HelperFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
