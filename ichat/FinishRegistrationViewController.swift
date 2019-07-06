@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class FinishRegistrationViewController: UIViewController {
 
@@ -30,8 +31,89 @@ class FinishRegistrationViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func cancelBtnPress(_ sender: Any) {
+        cleanTextField()
+        dismissKeyboard()
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func doneBtnPress(_ sender: Any) {
+        dismissKeyboard()
+        ProgressHUD.show("Registering...")
+        
+        if nameTextField.text != "" && surnameTextField.text != "" && countryTextField.text != "" && cityTextField.text != "" && phoneTextField.text != "" {
+            FUser.registerUserWith(email: email!, password: password!, firstName: nameTextField.text!, lastName: surnameTextField.text!) { (error) in
+                
+                if error != nul {
+                    ProgressHUD.dismiss()
+                    ProgressHUD.showError(error!.localizedDescription)
+                    return
+                }
+                
+                self.registerUser()
+            }
+        } else {
+            ProgressHUD.showError("All field is required!")
+        }
     }
+    
+    // MARK: HelperFunctions
+    func registerUser() {
+        let fullName = nameTextField.text! + " " + surnameTextField.text!
+        
+        var tempDictionary : Dictionary = [
+            kFIRSTNAME: nameTextField.text!,
+            kLASTNAME: surnameTextField.text!,
+            kFULLNAME: fullName,
+            kCOUNTRY: countryTextField.text!,
+            kCITY: cityTextField.text!,
+            kPHONE: phoneTextField.text!,
+        ] as [String : Any]
+        
+        if avatarImage == nil {
+            imageFromInitials(firstName: nameTextField.text!, lastName: surnameTextField.text!) {
+                (avatarInitials) in
+                let avatarIMG = avatarInitials.jpegData(compressionQuality: 0.7)
+                let avatar = avatarIMG?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+                
+                tempDictionary[kAVATAR] = avatar
+                
+                self.finishRegistration(withValue: tempDictionary)
+            }
+        } else {
+            let avatarData = avatarImage?.jpegData(compressionQuality: 0.7)
+            let avatar = avatarData!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+            
+            tempDictionary[kAVATAR] = avatar
+            
+            self.finishRegistration(withValue: tempDictionary)
+        }
+    }
+    
+    func finishRegistration(withValue : [String : Any]) {
+        updateCurrentUserInFirestore(withValues: withValue) { (error) in
+            if error != nil{
+                DispatchQueue.main.async {
+                    ProgressHUD.showError(error!.localizedDescription)
+                }
+                
+                return
+            }
+            
+            
+        }
+    }
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    func cleanTextField() {
+        nameTextField.text = ""
+        surnameTextField.text = ""
+        countryTextField.text = ""
+        cityTextField.text = ""
+        phoneTextField.text = ""
+    }
+    
 }

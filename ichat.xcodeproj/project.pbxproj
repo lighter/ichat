@@ -13,6 +13,7 @@
 		EC06789A22ACB9600099118F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC06789822ACB9600099118F /* Main.storyboard */; };
 		EC06789C22ACB9620099118F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC06789B22ACB9620099118F /* Assets.xcassets */; };
 		EC06789F22ACB9620099118F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC06789D22ACB9620099118F /* LaunchScreen.storyboard */; };
+		EC477A7A22CC7A2800B1AF06 /* CollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC477A7922CC7A2800B1AF06 /* CollectionReference.swift */; };
 		EC6977BC22C270450061CA05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC6977BB22C270450061CA05 /* GoogleService-Info.plist */; };
 		EC6977BE22C644EC0061CA05 /* FUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6977BD22C644EB0061CA05 /* FUser.swift */; };
 		EC6977C022C646C80061CA05 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6977BF22C646C80061CA05 /* Constants.swift */; };
@@ -31,6 +32,7 @@
 		EC06789B22ACB9620099118F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC06789E22ACB9620099118F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC0678A022ACB9620099118F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC477A7922CC7A2800B1AF06 /* CollectionReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionReference.swift; sourceTree = "<group>"; };
 		EC6977BB22C270450061CA05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC6977BD22C644EB0061CA05 /* FUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FUser.swift; sourceTree = "<group>"; };
 		EC6977BF22C646C80061CA05 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		EC6977C322C6647E0061CA05 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EC477A7922CC7A2800B1AF06 /* CollectionReference.swift */,
 				EC6977C422C6648F0061CA05 /* HelperFunctions.swift */,
 				EC6977BF22C646C80061CA05 /* Constants.swift */,
 			);
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC477A7A22CC7A2800B1AF06 /* CollectionReference.swift in Sources */,
 				EC6977C222C663FC0061CA05 /* FinishRegistrationViewController.swift in Sources */,
 				EC6977BE22C644EC0061CA05 /* FUser.swift in Sources */,
 				EC06789722ACB9600099118F /* ViewController.swift in Sources */,

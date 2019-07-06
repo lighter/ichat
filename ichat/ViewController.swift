@@ -81,8 +81,8 @@ class ViewController: UIViewController {
         repeatPassworTextField.text = ""
     }
     
-    // MARK: GoToApp
-    func gotToApp() {
+    // MARK: goToApp
+    func goToApp() {
         ProgressHUD.dismiss()
         cleanTextField()
         dismissKeyboard()
