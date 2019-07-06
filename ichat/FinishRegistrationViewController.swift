@@ -44,7 +44,7 @@ class FinishRegistrationViewController: UIViewController {
         if nameTextField.text != "" && surnameTextField.text != "" && countryTextField.text != "" && cityTextField.text != "" && phoneTextField.text != "" {
             FUser.registerUserWith(email: email!, password: password!, firstName: nameTextField.text!, lastName: surnameTextField.text!) { (error) in
                 
-                if error != nul {
+                if error != nil {
                     ProgressHUD.dismiss()
                     ProgressHUD.showError(error!.localizedDescription)
                     return
