@@ -252,37 +252,27 @@
             </objects>
             <point key="canvasLocation" x="836" y="137.18140929535232"/>
         </scene>
-        <!--Calls-->
+        <!--Chats-->
         <scene sceneID="HQo-vK-Thp">
             <objects>
-                <viewController id="3pu-oC-7bE" sceneMemberID="viewController">
+                <viewController id="3pu-oC-7bE" customClass="ChatsViewController" customModule="ichat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h3q-pF-uZV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="we are here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snH-Mo-rXh">
-                                <rect key="frame" x="16" y="44" width="343" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="VV7-Fu-fWG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="gQX-1n-owF" firstAttribute="trailing" secondItem="snH-Mo-rXh" secondAttribute="trailing" constant="16" id="E5H-TY-6Ww"/>
-                            <constraint firstItem="snH-Mo-rXh" firstAttribute="leading" secondItem="gQX-1n-owF" secondAttribute="leading" constant="16" id="d7I-at-IQi"/>
-                            <constraint firstItem="snH-Mo-rXh" firstAttribute="top" secondItem="gQX-1n-owF" secondAttribute="top" id="h7v-le-UOS"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gQX-1n-owF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calls" image="call" id="Eay-Jp-Xsz"/>
+                    <navigationItem key="navigationItem" title="Chats" id="Cqc-hY-KAq">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="PGN-zT-iAk">
+                            <connections>
+                                <action selector="createNewChatButtonPressed:" destination="3pu-oC-7bE" id="171-B7-E4z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNs-eT-U4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2429.5999999999999" y="-195.07389162561577"/>
+            <point key="canvasLocation" x="3372" y="-195.07389162561577"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EMq-uh-Zfs">
@@ -294,7 +284,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3pu-oC-7bE" kind="relationship" relationship="viewControllers" id="cSu-m1-wUd"/>
+                        <segue destination="nnY-xf-Vys" kind="relationship" relationship="viewControllers" id="cSu-m1-wUd"/>
                         <segue destination="5Y3-1c-oth" kind="relationship" relationship="viewControllers" id="tpj-xI-Q79"/>
                     </connections>
                 </tabBarController>
@@ -366,6 +356,88 @@
             </objects>
             <point key="canvasLocation" x="3372" y="495.81280788177344"/>
         </scene>
+        <!--Users Table View Controller-->
+        <scene sceneID="FUo-ip-xlJ">
+            <objects>
+                <tableViewController storyboardIdentifier="usersTableView" id="e9y-pu-scv" customClass="UsersTableViewController" customModule="ichat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pli-Le-YRE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="gbD-YD-TbJ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VqJ-7N-axE">
+                                    <rect key="frame" x="8" y="8" width="359" height="29"/>
+                                    <segments>
+                                        <segment title="My City"/>
+                                        <segment title="My Country"/>
+                                        <segment title="All"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="filterSegmentValueChanged:" destination="e9y-pu-scv" eventType="valueChanged" id="zMW-12-TQA"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="VqJ-7N-axE" firstAttribute="leading" secondItem="gbD-YD-TbJ" secondAttribute="leading" constant="8" id="HGf-45-wg1"/>
+                                <constraint firstItem="VqJ-7N-axE" firstAttribute="centerY" secondItem="gbD-YD-TbJ" secondAttribute="centerY" id="dO9-5V-HIx"/>
+                                <constraint firstAttribute="trailing" secondItem="VqJ-7N-axE" secondAttribute="trailing" constant="8" id="hVG-Mh-zrO"/>
+                                <constraint firstItem="VqJ-7N-axE" firstAttribute="centerX" secondItem="gbD-YD-TbJ" secondAttribute="centerX" id="sUs-pp-lhk"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="fTi-31-GpN" customClass="UserTableViewCell" customModule="ichat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fTi-31-GpN" id="adF-7B-oMf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-n4-5rX">
+                                            <rect key="frame" x="8" y="10" width="65" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="65" id="cjm-YU-4b1"/>
+                                                <constraint firstAttribute="height" constant="60" id="e5G-YV-7Xr"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FULL NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u34-Mt-eMS">
+                                            <rect key="frame" x="81" y="29.333333333333329" width="278" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="u34-Mt-eMS" firstAttribute="centerY" secondItem="adF-7B-oMf" secondAttribute="centerY" id="6jJ-0d-phD"/>
+                                        <constraint firstItem="u34-Mt-eMS" firstAttribute="trailing" secondItem="adF-7B-oMf" secondAttribute="trailingMargin" id="DPx-F3-lcu"/>
+                                        <constraint firstItem="u34-Mt-eMS" firstAttribute="leading" secondItem="Vf8-n4-5rX" secondAttribute="trailing" constant="8" id="OY4-17-O9p"/>
+                                        <constraint firstItem="Vf8-n4-5rX" firstAttribute="leading" secondItem="adF-7B-oMf" secondAttribute="leading" constant="8" id="lRN-QD-gui"/>
+                                        <constraint firstItem="Vf8-n4-5rX" firstAttribute="centerY" secondItem="adF-7B-oMf" secondAttribute="centerY" id="p9d-zE-b98"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="Vf8-n4-5rX" id="q5l-H0-dgd"/>
+                                    <outlet property="fullNameLabel" destination="u34-Mt-eMS" id="njh-1V-bnN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="e9y-pu-scv" id="Ota-g5-Xf5"/>
+                            <outlet property="delegate" destination="e9y-pu-scv" id="SNN-8m-qaL"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="filterSegmentedControl" destination="VqJ-7N-axE" id="wuC-uZ-SlM"/>
+                        <outlet property="headerView" destination="gbD-YD-TbJ" id="H4l-ov-C6v"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEm-cp-Yqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5245.6000000000004" y="-195.81280788177341"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="jdo-tb-EDd">
             <objects>
@@ -385,10 +457,29 @@
             </objects>
             <point key="canvasLocation" x="2429.5999999999999" y="495.81280788177344"/>
         </scene>
+        <!--Chats-->
+        <scene sceneID="Ogt-nE-GTS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nnY-xf-Vys" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chats" image="chat" id="Eay-Jp-Xsz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F9j-FA-caM">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3pu-oC-7bE" kind="relationship" relationship="rootViewController" id="78j-eG-50f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FC5-5E-wnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2429.5999999999999" y="-195.07389162561577"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avatarPlaceholder" width="101" height="101"/>
-        <image name="call" width="30" height="30"/>
+        <image name="chat" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
     </resources>
 </document>
